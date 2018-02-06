@@ -315,7 +315,7 @@
         <!--Finish GoalVC-->
         <scene sceneID="gJi-IX-fDt">
             <objects>
-                <viewController id="DyL-oR-Ffr" customClass="FinishGoalVC" customModule="goalpost_app" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="finishGoalVC" id="DyL-oR-Ffr" customClass="FinishGoalVC" customModule="goalpost_app" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="9H0-OJ-De0">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -346,6 +346,9 @@
                                             <constraint firstAttribute="width" constant="30" id="82f-nZ-Yhh"/>
                                         </constraints>
                                         <state key="normal" image="back"/>
+                                        <connections>
+                                            <action selector="backBtnWasPrssd:" destination="DyL-oR-Ffr" eventType="touchUpInside" id="fVk-Uy-ZFY"/>
+                                        </connections>
                                     </button>
                                 </subviews>
                                 <color key="backgroundColor" red="0.42745098040000001" green="0.73725490199999999" blue="0.38823529410000002" alpha="1" colorSpace="calibratedRGB"/>
@@ -357,11 +360,11 @@
                                     <constraint firstItem="sc3-n8-xY1" firstAttribute="leading" secondItem="4ch-36-faa" secondAttribute="leading" constant="15" id="qu5-eP-vu1"/>
                                 </constraints>
                             </view>
-                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="dT9-fG-8Oi">
-                                <rect key="frame" x="20" y="90" width="335" height="104"/>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="dT9-fG-8Oi">
+                                <rect key="frame" x="20" y="90" width="335" height="110"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="How many points until complete?" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="p3X-Vb-cW8">
-                                        <rect key="frame" x="34" y="0.0" width="267" height="25"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="335" height="25"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="25" id="APb-b2-gjM"/>
                                         </constraints>
@@ -369,39 +372,54 @@
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="0" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="6wV-YG-UV1">
-                                        <rect key="frame" x="139" y="35" width="57" height="69"/>
+                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="0" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="6wV-YG-UV1">
+                                        <rect key="frame" x="0.0" y="35" width="335" height="75"/>
                                         <color key="textColor" red="0.42745098040000001" green="0.73725490199999999" blue="0.38823529410000002" alpha="1" colorSpace="calibratedRGB"/>
                                         <fontDescription key="fontDescription" type="boldSystem" pointSize="54"/>
-                                        <textInputTraits key="textInputTraits"/>
+                                        <textInputTraits key="textInputTraits" keyboardType="numberPad"/>
                                     </textField>
                                 </subviews>
-                            </stackView>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="eiv-ps-7es">
-                                <rect key="frame" x="0.0" y="617" width="375" height="50"/>
-                                <color key="backgroundColor" red="0.91764705879999997" green="0.66274509800000003" blue="0.2666666667" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="50" id="mxx-p7-98R"/>
+                                    <constraint firstAttribute="height" constant="110" id="jwl-cq-yve"/>
                                 </constraints>
-                                <fontDescription key="fontDescription" type="boldSystem" pointSize="20"/>
-                                <state key="normal" title="GREATE GOAL">
-                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                </state>
-                                <connections>
-                                    <action selector="createGoalBtnWasPrssd:" destination="DyL-oR-Ffr" eventType="touchUpInside" id="F55-JM-7n0"/>
-                                </connections>
-                            </button>
+                            </stackView>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="aLS-5b-oAI">
+                                <rect key="frame" x="0.0" y="208" width="375" height="459"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="eiv-ps-7es">
+                                        <rect key="frame" x="0.0" y="409" width="375" height="50"/>
+                                        <color key="backgroundColor" red="0.91764705879999997" green="0.66274509800000003" blue="0.2666666667" alpha="1" colorSpace="calibratedRGB"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="50" id="mxx-p7-98R"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" type="boldSystem" pointSize="20"/>
+                                        <state key="normal" title="GREATE GOAL">
+                                            <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="createGoalBtnWasPrssd:" destination="DyL-oR-Ffr" eventType="touchUpInside" id="F55-JM-7n0"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstItem="eiv-ps-7es" firstAttribute="leading" secondItem="aLS-5b-oAI" secondAttribute="leading" id="Dyo-pE-7tI"/>
+                                    <constraint firstAttribute="bottom" secondItem="eiv-ps-7es" secondAttribute="bottom" id="EMa-jG-Rv1"/>
+                                    <constraint firstAttribute="trailing" secondItem="eiv-ps-7es" secondAttribute="trailing" id="IAC-5n-rKa"/>
+                                </constraints>
+                            </view>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
                             <constraint firstItem="4ch-36-faa" firstAttribute="leading" secondItem="2bw-Zl-5Yh" secondAttribute="leading" id="9Xb-9c-IVw"/>
-                            <constraint firstItem="eiv-ps-7es" firstAttribute="leading" secondItem="2bw-Zl-5Yh" secondAttribute="leading" id="Hpb-U9-dfu"/>
+                            <constraint firstItem="aLS-5b-oAI" firstAttribute="bottom" secondItem="2bw-Zl-5Yh" secondAttribute="bottom" id="ESu-Ix-Zpu"/>
+                            <constraint firstItem="aLS-5b-oAI" firstAttribute="trailing" secondItem="2bw-Zl-5Yh" secondAttribute="trailing" id="EwL-mE-WUD"/>
                             <constraint firstItem="4ch-36-faa" firstAttribute="trailing" secondItem="2bw-Zl-5Yh" secondAttribute="trailing" id="ILa-2Z-1TF"/>
                             <constraint firstItem="dT9-fG-8Oi" firstAttribute="top" secondItem="4ch-36-faa" secondAttribute="bottom" constant="20" id="IyT-qA-AVe"/>
-                            <constraint firstItem="eiv-ps-7es" firstAttribute="trailing" secondItem="2bw-Zl-5Yh" secondAttribute="trailing" id="dUi-5q-PAt"/>
+                            <constraint firstItem="aLS-5b-oAI" firstAttribute="leading" secondItem="2bw-Zl-5Yh" secondAttribute="leading" id="K3v-4E-bZL"/>
+                            <constraint firstItem="aLS-5b-oAI" firstAttribute="top" secondItem="dT9-fG-8Oi" secondAttribute="bottom" constant="8" id="Xm3-dS-xwd"/>
                             <constraint firstItem="2bw-Zl-5Yh" firstAttribute="trailing" secondItem="dT9-fG-8Oi" secondAttribute="trailing" constant="20" id="gCH-dz-QCm"/>
                             <constraint firstItem="4ch-36-faa" firstAttribute="top" secondItem="9H0-OJ-De0" secondAttribute="top" id="ksc-x2-yKV"/>
-                            <constraint firstItem="eiv-ps-7es" firstAttribute="bottom" secondItem="2bw-Zl-5Yh" secondAttribute="bottom" id="mTz-c3-Tr6"/>
                             <constraint firstItem="dT9-fG-8Oi" firstAttribute="centerX" secondItem="9H0-OJ-De0" secondAttribute="centerX" id="uws-Et-qkD"/>
                             <constraint firstItem="dT9-fG-8Oi" firstAttribute="leading" secondItem="2bw-Zl-5Yh" secondAttribute="leading" constant="20" id="wTF-k0-Ws9"/>
                         </constraints>
@@ -409,7 +427,7 @@
                     </view>
                     <connections>
                         <outlet property="createGoalBtn" destination="eiv-ps-7es" id="agE-Zx-5e8"/>
-                        <outlet property="pointTxtField" destination="6wV-YG-UV1" id="Oht-m4-gWN"/>
+                        <outlet property="pointsTextField" destination="6wV-YG-UV1" id="Oht-m4-gWN"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="f0m-xa-0xj" userLabel="First Responder" sceneMemberID="firstResponder"/>
